@@ -30,7 +30,7 @@ int	main(int ac, char **av)
 		return(0);
 	}
 	pid = ft_atoi(av[1]);
-	while (av[2][1])
+	while (av[2][i])
 	{
 		char_to_bits(av[2][i++], pid);
 	}
