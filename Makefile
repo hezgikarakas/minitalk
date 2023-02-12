@@ -33,13 +33,13 @@ libft		:
 		  make -C libft
 
 
-clean		:
-		  rm -f $(OBJS) $(B_OBJS)
+clean		: 
+		  rm -rf $(OBJS) $(B_OBJS)
 		  make -C libft clean
 
 
 fclean		: clean
-		  rm -f server client server_bonus client_bonus libft/libft.a
+		  rm -rf server client server_bonus client_bonus libft/libft.a
 
 
 re		: fclean all
