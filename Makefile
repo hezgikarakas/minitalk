@@ -20,10 +20,10 @@ server		: server.o utils.o
 client		: client.o utils.o
 		  $(CC) -o $@ $^
 		  
-server_bonus	: server_bonus.o
+server_bonus	: server_bonus.o utils.o
 		  $(CC) -o $@ $^
 
-client_bonus	: client_bonus.o
+client_bonus	: client_bonus.o utils.o
 		  $(CC) -o $@ $^
 
 %.o: %.c
