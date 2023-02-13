@@ -1,6 +1,4 @@
-#include <signal.h>
-#include <unistd.h>
-#include "./libft/libft.h"
+#include "minitalk.h"
 
 void	char_to_bits(char c, int pid)
 {

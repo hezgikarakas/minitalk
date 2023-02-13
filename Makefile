@@ -1,4 +1,4 @@
-SRCS		= server.c client.c
+SRCS		= server.c client.c utils.c
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -14,35 +14,30 @@ all		: server client
 
 bonus		: server_bonus client_bonus
 
-server		: server.o libft
-		  $(CC) -o $@ $< -Llibft -lft
+server		: server.o utils.o
+		  $(CC) -o $@ $^
 
-client		: client.o libft
-		  $(CC) -o $@ $< -Llibft -lft
+client		: client.o utils.o
+		  $(CC) -o $@ $^
 		  
-server_bonus	: server_bonus.o libft
-		  $(CC) -o $@ $< -Llibft -lft
+server_bonus	: server_bonus.o
+		  $(CC) -o $@ $^
 
-client_bonus	: client_bonus.o libft
-		  $(CC) -o $@ $< -Llibft -lft
+client_bonus	: client_bonus.o
+		  $(CC) -o $@ $^
 
 %.o: %.c
 		  $(CC) -c $(CFLAGS) $?
 
-libft		:
-		  make -C libft
-
-
 clean		: 
 		  rm -rf $(OBJS) $(B_OBJS)
-		  make -C libft clean
 
 
 fclean		: clean
-		  rm -rf server client server_bonus client_bonus libft/libft.a
+		  rm -rf server client server_bonus client_bonus
 
 
 re		: fclean all
 
 
-./PHONY		: all bonus libft clean fclean re
+./PHONY		: all bonus clean fclean re
