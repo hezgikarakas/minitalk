@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakaraka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hakaraka <hakaraka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 09:59:20 by hakaraka          #+#    #+#             */
-/*   Updated: 2023/02/14 09:59:24 by hakaraka         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:46:33 by hakaraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_putchar_fd(char c, int fd)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 }
 
@@ -29,7 +29,7 @@ size_t	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }
@@ -58,16 +58,16 @@ int	ft_atoi(const char *str)
 	long	sign;
 	long	res;
 	long	new_res;
-	int	i;
+	int		i;
 
 	i = 0;
-	while((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
 	if (str[i] == '-')
 		sign = -1;
 	else
 		sign = 1;
-	if(str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	res = 0;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -78,5 +78,5 @@ int	ft_atoi(const char *str)
 		res = new_res;
 		i++;
 	}
-	return(res * sign);
+	return (res * sign);
 }
